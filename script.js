@@ -1,4 +1,4 @@
-const display = document.getElementById("display");
+
 const question = document.getElementById("question");
 const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
@@ -22,7 +22,8 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-
+  const display = document.getElementById("display");
+  
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
@@ -38,6 +39,8 @@ const typeController = (e) => {
     return;
   }
 
+  
+
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
@@ -48,14 +51,17 @@ const typeController = (e) => {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
     errorCount +=1;
   }
+  // let wordCountArray = [];
+  // let wordCount = display.innerText.split('▪').length;
+  // wordCountArray.push(wordCount);
+  
+allText = display.innerText.split("▪").length;
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
-    gameOver();
+    gameOver(allText);
   }
-  // else{
-  //   errorCount +=1;
-  // }
+  
 };
 
 const validate = (key) => {
@@ -65,8 +71,9 @@ const validate = (key) => {
   return false;
 };
 
+
 // FINISHED TYPING
-const gameOver = () => {
+const gameOver = (allText) => {
   document.removeEventListener("keydown", typeController);
   // the current time is the finish time
   // so total time taken is current time - start time
@@ -81,15 +88,18 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
+
+
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken.toFixed(0)}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p>Your Speed: <span class = 'bold green'>${(allText / Number(timeTaken.toFixed(0)) * 60).toFixed(0)}</span> WPM</p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, errorCount,allText);
 
   // restart everything
   startTime = null;
@@ -141,3 +151,5 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent.toFixed(0) : 0} seconds`;
 }, 1000);
+
+
