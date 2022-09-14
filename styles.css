@@ -141,11 +141,22 @@ button {
   cursor: pointer;
 }
 
-#histories {
+@media only screen and (min-width:900px) {
+  #histories{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2%;
+  }
+  .card{
+    flex-direction: column;
+  }
+}
+
+/* #histories {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
+} */
 
 .card {
   width: 100%;
