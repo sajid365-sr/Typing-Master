@@ -40,12 +40,21 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <p class="text-opacity-75 text-dark"> 
-                  Their main difference is that local storage data does not expire, whereas session storage data gets cleared when the user closes its browser window.<br>
+                <article class="text-opacity-75 text-dark">
+                  Their main difference is that local storage data does not
+                  expire, whereas session storage data gets cleared when the
+                  user closes its browser window.<br />
 
-                  Page sessions are valid for only one tab at a time. So, if a user has three tabs open, each one will have its own page session. Since local storage is not session-based, all the data must be deleted via javascript or manually.<br><br>
-                  Both local and session storages are key-value stores, meaning that they both store data in a dictionary format. The value of each key has to be a string, so if you have complex data structures like objects or arrays, you will need to serialize them using JSON strings.
-                </p>
+                  Page sessions are valid for only one tab at a time. So, if a
+                  user has three tabs open, each one will have its own page
+                  session. Since local storage is not session-based, all the
+                  data must be deleted via javascript or manually.<br /><br />
+                  Both local and session storages are key-value stores, meaning
+                  that they both store data in a dictionary format. The value of
+                  each key has to be a string, so if you have complex data
+                  structures like objects or arrays, you will need to serialize
+                  them using JSON strings.
+                </article>
               </div>
             </div>
           </div>
@@ -69,12 +78,35 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <p>
-                  In a browser environment, the global scope is controlled by
-                  the window object while in Node. js, it's controlled by the
-                  global object. Block scopes are what you get when you use if
-                  statements, for statements, and the like.
-                </p>
+                <article>
+                  <strong>Block Scope :</strong>
+                  <p class="text-dark text-opacity-75">
+                    A block scope means a block execution point for JavaScript
+                    functions or variables. Variables that defined within a
+                    function or a block statement like if-else statements and
+                    for statements are blocked scope variables. They can't be
+                    accessible from outside their scope. Simply, A block scoped
+                    variable means that the variable defined within a block will
+                    not be accessible from outside the block.
+                  </p>
+
+                  <strong>Global Scope :</strong>
+                  <p class="text-dark text-opacity-75">
+                    The Javascript global scope is the context where everything
+                    in a Javascript program executes by default. This scope
+                    includes all variables, objects, and references that are not
+                    contained within a customized scope defined by a programmer.
+                    functions and variables that declared in the global scope
+                    can be accessible from anywhere of the JavaScript file.
+                    Global scope is the entire Javascript execution environment.
+                  </p>
+
+                  <p class="text-dark text-opacity-75">
+                    In a browser environment, the global scope is controlled by
+                    the window object while in Node. js, it's controlled by the
+                    global object.
+                  </p>
+                </article>
               </div>
             </div>
           </div>
@@ -98,27 +130,35 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <p>
-                  <strong>Event Loop :</strong> The event loop is the secret
-                  behind JavaScript's asynchronous programming. JS executes all
-                  operations on a single thread, but using a few smart data
-                  structures, it gives us the illusion of multi-threading.<br /><br />
+                <article>
+                  <strong>Event Loop :</strong>
+                  <p class="text-dark text-opacity-75">
+                    The event loop is the secret behind JavaScript's
+                    asynchronous programming. JS executes all operations on a
+                    single thread, but using a few smart data structures, it
+                    gives us the illusion of multi-threading.
+                  </p>
 
                   <strong>Easy Definition :</strong>
-                  The Event Loop has one simple job — to monitor the Call Stack
-                  and the Callback Queue or Message Queue.<br />
+                  <p class="text-dark text-opacity-75">
+                    The Event Loop has one simple job — to monitor the Call
+                    Stack and the Callback Queue or Message Queue.<br />
+                    If the Call Stack is empty, it will take the first event
+                    from the Callback queue and will push it to the Call Stack,
+                    which effectively runs it.
+                  </p>
 
-                  If the Call Stack is empty, it will take the first event from
-                  the Callback queue and will push it to the Call Stack, which
-                  effectively runs it.<br><br>
-                  <strong>Easiest explanation :</strong> When any
-                  Asynchronous event occur such as setTimeOut or promises...
-                  Then these task takes some time to complete internal operations if they have
-                  any. If they completed their internal operations or don't have any, then they
-                  simply put into message queue or callback queue. Then event
-                  loop will firstly execute the call stack tasks and then look
-                  for callback or message queue and then execute it..
-                </p>
+                  <strong>Easiest explanation :</strong>
+                  <p class="text-dark text-opacity-75">
+                    When any Asynchronous event occur such as setTimeOut or
+                    promises... Then these task takes some time to complete
+                    internal operations if they have any. If they completed
+                    their internal operations or don't have any, then they
+                    simply put into message queue or callback queue. Then event
+                    loop will firstly execute the call stack tasks and then look
+                    for callback or message queue and then execute it..
+                  </p>
+                </article>
               </div>
             </div>
           </div>
@@ -139,15 +179,15 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong><span class="text-primary">8</span> ways to get undefined :-</strong><br><br>
+                1. A "variable" that is not initialized or value not set.<br>
+                2. A function with no return.<br>
+                3. If a function has <span class="text-primary">n</span> parameter and we pass <span class="text-primary">n-1</span> parameter. Means a parameter that is not passed will be undefined.<br>
+                4. If no value is set to the right side of the return keyword.<br> 
+                5. If we want to access a property that doesn't exist on the object will be an undefined.<br>
+                6. Accessing array elements outside of the index range.<br>
+                7. If we delete an element from an array and trying to access it will get undefined.<br> 
+                8. Set a value derectly as "undefined".
               </div>
             </div>
           </div>
