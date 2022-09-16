@@ -40,13 +40,11 @@
               data-bs-parent="#accordionExample"
             >
               <div class="accordion-body">
-                <p>
-                  SessionStorage is similar to localStorage ; the difference is
-                  that while data in localStorage doesn't expire, data in
-                  sessionStorage is cleared when the page session ends. Whenever
-                  a document is loaded in a particular tab in the browser, a
-                  unique page session gets created and assigned to that
-                  particular tab.
+                <p class="text-opacity-75 text-dark"> 
+                  Their main difference is that local storage data does not expire, whereas session storage data gets cleared when the user closes its browser window.<br>
+
+                  Page sessions are valid for only one tab at a time. So, if a user has three tabs open, each one will have its own page session. Since local storage is not session-based, all the data must be deleted via javascript or manually.<br><br>
+                  Both local and session storages are key-value stores, meaning that they both store data in a dictionary format. The value of each key has to be a string, so if you have complex data structures like objects or arrays, you will need to serialize them using JSON strings.
                 </p>
               </div>
             </div>
