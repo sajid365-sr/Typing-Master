@@ -16,6 +16,24 @@ body {
   margin: 0 auto;
 }
 
+
+.blog-link ul{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 15%;
+  gap: 5%;
+}
+.blog-link ul li a{
+  text-decoration: none;
+  font-size: 20px;
+}
+.blog-link ul :nth-child(1) a{
+  color: white;
+  text-decoration: underline;
+}
+.blog-link ul :nth-child(2) a{
+color: gray;
+}
 #question {
   height: 100px;
   display: flex;
